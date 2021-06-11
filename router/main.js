@@ -5,13 +5,15 @@ module.exports = function(app) {
      app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
          extended: true
       }));
-     
+      app.get('/lge',function(req,res){
+         res.render('lge.html');
+     });
      app.get('/',function(req,res){
         res.render('index.html')
      });
      app.get('/about',function(req,res){
         res.render('about.html');
-    });
+    });// /about을 하면 about.html이 실행된다.
      
     app.get('/listall', function (req, res) {
       //res.render('about.html');
